@@ -51,3 +51,18 @@ npm run dev
 App will run at:
 
 http://localhost:5173
+
+Added two rules on render frontend for url mapping:
+Source
+/api/
+Destination
+https://pastebin-lite-2-vgtz.onrender.com
+Action
+Rewrite
+
+Source
+/*
+Destination
+/index.html
+Action
+
