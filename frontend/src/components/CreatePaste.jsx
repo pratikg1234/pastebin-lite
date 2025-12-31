@@ -9,7 +9,8 @@ export default function CreatePaste() {
   const [ttl, setTtl] = useState(60);
   const [maxViews, setMaxViews] = useState(5);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setError("");
     setPasteUrl("");
 
