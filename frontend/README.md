@@ -8,16 +8,6 @@ This frontend communicates with a Spring Boot backend API and is deployed as a s
 Frontend:
 👉 https://pastebin-lite-frontend.onrender.com
 
-📝 Pastebin Lite – Frontend
-
-A lightweight Pastebin-style frontend built using React + Vite, allowing users to create and view text pastes via shareable links.
-This frontend communicates with a Spring Boot backend API and is deployed as a static site on Render.
-
-🚀 Live Demo
-
-Frontend:
-👉 https://pastebin-lite-frontend.onrender.com
-
 🧱 Tech Stack
 Layer	Technology
 Framework	React (Vite)
