@@ -1,14 +1,12 @@
-# Use JDK 17 base image
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+WORKDIR /build
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src ./src
+RUN mvn clean package -DskipTests
+
 FROM eclipse-temurin:17-jdk-alpine
-
-# Set working directory
 WORKDIR /app
-
-# Copy JAR file
-COPY target/pastebin-lite-0.0.1.jar app.jar
-
-# Expose default Spring Boot port
+COPY --from=build /build/target/*.jar app.jar
 EXPOSE 8080
-
-# Start the app
 ENTRYPOINT ["java", "-jar", "app.jar"]
