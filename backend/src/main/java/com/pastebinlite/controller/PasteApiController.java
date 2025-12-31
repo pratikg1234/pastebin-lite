@@ -28,8 +28,8 @@ public class PasteApiController {
 
     private final PasteRepository repository;
 
-    @Value("${frontend.base-url}")
-    private String frontendBaseUrl;
+    private String frontendBaseUrl = System.getenv()
+        .getOrDefault("FRONTEND_BASE_URL", "http://localhost:5173");
 
     public PasteApiController(PasteRepository repository) {
         this.repository = repository;
