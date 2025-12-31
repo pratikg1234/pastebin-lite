@@ -9,6 +9,8 @@ export default function CreatePaste() {
   const [ttl, setTtl] = useState(60);
   const [maxViews, setMaxViews] = useState(5);
 
+  const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
   const handleSubmit = async () => {
     setError("");
     setPasteUrl("");
@@ -26,7 +28,7 @@ export default function CreatePaste() {
 
     try {
       const data = await createPaste(body);
-      setPasteUrl(`${window.location.origin}/p/${data.id}`);
+      setPasteUrl(`${BACKEND_BASE_URL}/p/${data.id}`);
       setContent("");
     } catch {
       setError("Failed to create paste");
